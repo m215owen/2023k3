@@ -7,7 +7,7 @@
 
 
 
-sed -i '$a src-git bypass https://github.com/kiddin9/openwrt-bypass' feeds.conf.default
+#sed -i '$a src-git bypass https://github.com/kiddin9/openwrt-bypass' feeds.conf.default
 
 
 cat >$NETIP <<-EOF
