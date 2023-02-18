@@ -10,7 +10,7 @@
 git clone https://github.com/sirpdboy/luci-app-autotimeset package/luci-app-autotimeset
 git clone https://github.com/sirpdboy/netspeedtest.git package/netspeedtest
 git clone https://github.com/KFERMercer/luci-app-tcpdump.git ./package/luci-app-tcpdump
-git clone https://github.com/Ausaci/luci-app-nat6-helper.git /package/luci-app-nat6-helper
+git clone https://github.com/Ausaci/luci-app-nat6-helper.git package/luci-app-nat6-helper
 
 #sed -i '$a src-git bypass https://github.com/kiddin9/openwrt-bypass' feeds.conf.default
 
