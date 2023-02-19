@@ -25,6 +25,9 @@ uci set network.lan.netmask='255.255.255.0'                   # IPv4 子网掩�
 uci set network.lan.delegate='0'                              # 去掉LAN口使用内置的 IPv6 管理(若用IPV6请把'0'改'1')
 uci set dhcp.@dnsmasq[0].filter_aaaa='1'                      # 禁止解析 IPv6 DNS记录(若用IPV6请把'1'改'0')
 
+uci set network.wan.proto=pppoe    //设置wan口类型为pppoe
+uci set network.wan.username=[上网帐户]
+uci set network.wan.password=[上网密码]    //这两行设置就是宽带账号
 #uci set dhcp.lan.ignore='1'                                  # 旁路由关闭DHCP功能（去掉uci前面的#生效）
 #uci delete network.lan.type                                  # 旁路由去掉桥接模式（去掉uci前面的#生效）
 uci set system.@system[0].hostname='OpenWrt-K3'              # 修改主机名称为OpenWrt-123
