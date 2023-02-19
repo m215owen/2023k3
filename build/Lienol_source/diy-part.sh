@@ -6,7 +6,7 @@
 # 修改IP项的EOF于EOF之间请不要插入其他扩展代码，可以删除或注释里面原本的代码
 
 # 下载源码
-git clone https://github.com/UnblockNeteaseMusic/luci-app-unblockneteasemusic.git package/luci-app-unblockneteasemusic
+#git clone https://github.com/UnblockNeteaseMusic/luci-app-unblockneteasemusic.git package/luci-app-unblockneteasemusic
 git clone https://github.com/sirpdboy/netspeedtest.git package/netspeedtest
 git clone https://github.com/KFERMercer/luci-app-tcpdump.git ./package/luci-app-tcpdump
 git clone https://github.com/Ausaci/luci-app-nat6-helper.git package/luci-app-nat6-helper
