@@ -114,6 +114,16 @@ echo "Add CPU Temperature in Admin Index OK====================="
 # 整理固件包时候,删除您不想要的固件或者文件,让它不需要上传到Actions空间（根据编译机型变化,自行调整需要删除的固件名称）
 cat >"$CLEAR_PATH" <<-EOF
 packages
+echo '添加lwz322的K3屏幕插件'
+rm -rf package/luci-app-k3screenctrl
+git clone https://github.com/lwz322/luci-app-k3screenctrl.git package/luci-app-k3screenctrl
+echo '=========Add k3screen plug OK!========='
+
+echo '添加jerrykuku的argon-mod主题'
+rm -rf feeds/luci/themes/luci-theme-argon/
+git clone https://github.com/jerrykuku/luci-theme-argon feeds/luci/themes/luci-theme-argon/
+echo '=========Add argon-mod OK!
+========='
 config.buildinfo
 feeds.buildinfo
 openwrt-x86-64-generic-kernel.bin
