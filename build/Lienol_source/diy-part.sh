@@ -19,6 +19,11 @@ sed -i "/<tr><td width=\"33%\"><%:Load Average%>/a \ \t\t<tr><td width=\"33%\"><
 cat feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_status/index.htm |grep Temperature
 echo "Add CPU Temperature in Admin Index OK====================="
 
+echo '添加jerrykuku的argon-mod主题'
+rm -rf feeds/luci/themes/luci-theme-argon/
+git clone https://github.com/jerrykuku/luci-theme-argon feeds/luci/themes/luci-theme-argon/
+echo '=========Add argon-mod OK!
+========='
 
 cat >$NETIP <<-EOF
 uci set network.lan.ipaddr='192.168.3.1'                      # IPv4 地址(openwrt后台地址)
