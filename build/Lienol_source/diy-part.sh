@@ -19,11 +19,6 @@ rm -rf package/luci-app-k3screenctrl
 git clone https://github.com/lwz322/luci-app-k3screenctrl.git package/luci-app-k3screenctrl
 echo '=========Add k3screen plug OK!========='
 
-#添加主页的CPU温度显示
-sed -i "/<tr><td width=\"33%\"><%:Load Average%>/a \ \t\t<tr><td width=\"33%\"><%:CPU Temperature%></td><td><%=luci.sys.exec(\"sed 's/../&./g' /sys/class/thermal/thermal_zone0/temp|cut -c1-4\")%></td></tr>" feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_status/index.htm
-cat feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_status/index.htm |grep Temperature
-echo "Add CPU Temperature in Admin Index OK====================="
-
 echo '添加jerrykuku的argon-mod主题'
 rm -rf feeds/luci/themes/luci-theme-argon/
 git clone https://github.com/jerrykuku/luci-theme-argon feeds/luci/themes/luci-theme-argon/
@@ -111,6 +106,10 @@ sed -i 's/"Web 管理"/"Web管理"/g' `egrep "Web 管理" -rl ./`
 sed -i 's/"管理权"/"改密码"/g' `egrep "管理权" -rl ./`
 sed -i 's/"带宽监控"/"监控"/g' `egrep "带宽监控" -rl ./`
 
+#添加主页的CPU温度显示
+sed -i "/<tr><td width=\"33%\"><%:Load Average%>/a \ \t\t<tr><td width=\"33%\"><%:CPU Temperature%></td><td><%=luci.sys.exec(\"sed 's/../&./g' /sys/class/thermal/thermal_zone0/temp|cut -c1-4\")%></td></tr>" feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_status/index.htm
+cat feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_status/index.htm |grep Temperature
+echo "Add CPU Temperature in Admin Index OK====================="
 
 # 整理固件包时候,删除您不想要的固件或者文件,让它不需要上传到Actions空间（根据编译机型变化,自行调整需要删除的固件名称）
 cat >"$CLEAR_PATH" <<-EOF
